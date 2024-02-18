@@ -47,6 +47,47 @@ Generate and download a mock server from **Petstore 3.1** of your choice using t
 ### 2️⃣ Start the Mock Server
 The downloaded mock server contains a `README` file. Follow the instructions in the `README` file to run a local instance of the mock server. The server binds to a local port and can be used to invoke all functions specified in your API specification.
 
+#### Troubleshooting
+_NOTE: If you receive an error that looks like this:_
+```
+openapi.validator: validation errors [
+  {
+    "keyword": "pattern",
+    "dataPath": ".openapi",
+    "schemaPath": "#/properties/openapi/pattern",
+    "params": {
+      "pattern": "^3\\.0\\.\\d(-.+)?$"
+    },
+    "message": "should match pattern \"^3\\.0\\.\\d(-.+)?$\""
+  }
+]
+```
+
+...the validator is mis-matching some of the versions it expects. 
+Even though we are working with OAS 3.1, it's trying to validate for 3.0.x.
+
+Fix this error by going into your mock servers folders, then open the file
+`api/openapi.yaml`.
+
+The first few lines look something like this:
+
+```yaml
+openapi: 3.1.0
+info:
+  title: Swagger Petstore - OpenAPI 3.1
+  description: |-
+```
+
+We're going to change it to look like this (changing to `openapi: 3.0.0`):
+```
+openapi: 3.0.0
+info:
+  title: Swagger Petstore - OpenAPI 3.1
+  description: |-
+```
+
+Then rerun the start command.
+
 ### 3️⃣ Observe Running in Localhost
 Observe the localhost URL in the address bar and the Swagger documentation in the browser viewer.
 
