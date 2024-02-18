@@ -97,4 +97,4 @@ Let's explore the API by doing the following steps.
 1. Discover a valid **available** `PET ID` using the `/pet/findByStatus` (**GET**) endpoint.
 2. Invoke the `/pet/{petId}` (**GET**) endpoint using the `PET ID` from step 1 above.
 3. Place an order for your pet using the endpoint `/store/order` (**POST**) and your `PET ID` from step 1. Look at the response body and make note of your `ORDER ID` (note that you entered in the `ORDER ID` in your request body).
-4. Using `/store/order/{orderId}`, show the response body of your order in the system.
+4. Using `/store/order/{orderId}` (**GET**), show the response body of your order in the system.
