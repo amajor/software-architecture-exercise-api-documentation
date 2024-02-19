@@ -10,6 +10,8 @@ In this exercise, you will work with OpenAPI specification language to study and
     3. [Learn Key Features of the Specification Language](#learn-key-features-of-the-specification-language)
 ---
 
+📼 [API Documentation Exercise - Video Walkthrough](https://youtu.be/kVfvGTpST_Y)
+
 # Familiarize Yourself with the Swagger Toolset
 https://swagger.io/
 
